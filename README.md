@@ -6,18 +6,17 @@ Nosso site Contara com vários sistemas que irão dar assistência para os usuá
 
 ## Alunos integrantes da equipe
 
-* Yan Araújo Resende
-* Luís Antônio de Souza e Sousa
-* Rafael Lopes Cardoso Rocha
-* Lucca Maliniak
-* Matheus de Araújo Mendes
+- Yan Araújo Resende
+- Luís Antônio de Souza e Sousa
+- Rafael Lopes Cardoso Rocha
+- Lucca Maliniak
+- Matheus de Araújo Mendes
 
 ## Professores responsáveis
 
-* Rommel
-* Will
-* Roberto
-
+- Rommel
+- Will
+- Roberto
 
 ## Instruções de utilização
 
