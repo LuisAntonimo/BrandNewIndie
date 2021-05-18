@@ -45,3 +45,11 @@ body { background-color: var(--bs-gray-dark); color: var(--bs-light);}
 header {
     background-color: var(--bs-dark);
 }
+.JogosPrincipais{
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+.jogostag .titulo{
+  margin: 0 auto;
+  text-align: center;
+}
