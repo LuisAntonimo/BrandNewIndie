@@ -1,4 +1,4 @@
-# Nome do projeto
+# Projeto Jogos Borel
 
 O projeto Jogos Borel tem como objetivo, ajudar o público de games indies a encontrar jogos deste seguimento com uma maior facilidade e com uma auditoria por trás, tendo recomendações aprovadas por nossa equipe antes de ser catalogado. Nosso objetivo se amplia também em ter um contato mais próximo com os desenvolvedores desta área, para uma melhor avaliação e divulgação de seus produtos.
 
