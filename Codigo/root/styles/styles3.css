@@ -40,19 +40,54 @@
   }
 
 body { background-color: var(--bs-gray-dark); color: var(--bs-light);}
-
-
 header {
     background-color: var(--bs-dark);
 }
-.JogosPrincipais{
-  padding-top: 150px;
-  padding-bottom: 50px;
+.Botão-voltar{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    font-size: 35px;
+    padding:90px 60px 0px;
 }
-.jogostag .titulo{
-  margin: 0 auto;
-  text-align: center;
+.Botão-voltar button{
+    font-size: 35px;
 }
-.JogosPrincipais .col button{
-  background-color:var(--bs-danger);
+.informacoesdev{
+    padding-top: 70px;
+}
+.fotodeperfil{
+    width: 450px;
+    height: 450px;
+    border: transparent 2px;
+    border-radius: 300px;
+}
+.iconerede{
+    width:60px;
+    height:60px;
+}
+.informacoesdev .descricao{
+    background-color: gray;
+}
+.informacoesdev .redes-sociais{
+    background-color:gray;
+}
+.informacoesdev hr{
+    height: 2px;
+}
+.imgjogo {
+    width:400px;
+    height: 225px;
+    padding: 10px 0px;
+}
+.frances{
+    background-color:gray;
+    padding-top: 20px;
+    padding-bottom:20px;
+}
+.jogo h1{
+    font-size: 30px;
+}
+.butao{
+    padding: 10px 0px
 }

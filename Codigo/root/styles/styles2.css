@@ -53,44 +53,63 @@ header {
 .Botão-voltar button{
     font-size: 35px;
 }
-.informacoesdev{
-    padding-top: 70px;
+.Botão-voltar hr{
+    color: white;
 }
-.fotodeperfil{
-    width: 450px;
-    height: 450px;
-    border: transparent 2px;
-    border-radius: 300px;
+.elementosjogo .carousel-inner img{
+    padding-top: 10px;
+    width: 80px;
+    height: 380px;
 }
-.iconerede{
-    width:60px;
-    height:60px;
+.elementosjogo .d-block{
+    width: 280px;
+    height: 300px;
 }
-.informacoesdev .descricao{
-    background-color: gray;
-    border: var(--bs-red) 2px solid;
+.elementosjogo .col-8{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
 }
-.informacoesdev .redes-sociais{
+.col-8 img{
+    width:85px;
+    height:85px;
+}
+
+.elementosjogo .container{
     background-color:gray;
-    border: var(--bs-red) 2px solid;
+    border-radius:5px;
+    padding-top: 10px;
+}    
+.tagss h1{
+    display:flex;
+    padding-top:25px;
+    justify-content:center;
 }
-.informacoesdev hr{
-    height: 2px;
+.tagss hr{
+    width: 90%;
+    margin: 0 auto;
+    height: 3px;
 }
-.imgjogo {
-    width:400px;
-    height: 225px;
-    padding: 10px 0px;
-}
-.frances{
-    background-color:gray;
-    padding-top: 20px;
+.colunastags{
+    padding-top:20px;
     padding-bottom:20px;
-    border: var(--bs-red) 2px solid;
+    font-size:25px;
 }
-.jogo h1{
-    font-size: 30px;
+.comentarios{
+    padding-top: 25px;
 }
-.butao{
-    padding: 10px 0px
+.comentarios img{
+    width:70px;
+    height:70px;
+}
+.comentario{
+    margin: 10px;
+    border-radius: 10px;
+    background-color: gray;
+}
+.lojas .container{
+    padding-top: 80px;
+}
+footer{ 
+    background-color: var(--bs-dark);
 }
