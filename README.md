@@ -14,9 +14,9 @@ Nosso site Contara com vários sistemas que irão dar assistência para os usuá
 
 ## Professores responsáveis
 
-- Rommel
-- Will
-- Roberto
+- Rommel Vieira Carneiro
+- Will Ricardo Dos Santos Machado
+- Roberto Felipe Dias Ferreira Da Rocha
 
 ## Instruções de utilização
 
