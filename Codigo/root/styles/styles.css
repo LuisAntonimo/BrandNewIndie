@@ -53,3 +53,15 @@ header {
   margin: 0 auto;
   text-align: center;
 }
+
+#browse-games{
+  text-align: center;
+  margin: 30px;
+}
+#games-list{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: larger;
+  text-align: center;
+  justify-content: space-between;
+}
