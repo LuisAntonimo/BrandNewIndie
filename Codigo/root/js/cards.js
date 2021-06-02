@@ -7,7 +7,7 @@ function createCard(game) { // cria um card baseado nos dados tirados do parâme
 
   card.className = 'col-12 col-sm-12 col-md-3 col-lg-3 card-transparent';
 
-  card.innerHTML = `<img src="${game.image}" class="card-img-top" alt="${game.title}">`;
+  card.innerHTML = `<a href="./pages/game.html"><img src="${game.image}" class="card-img-top" alt="${game.title}"></a>`;
 
   gameList.appendChild(card); // adiciona o card a games-list
 }
