@@ -8,9 +8,8 @@ function checkTag(filter) {
       const card = cards[i];
   
       if (card.classList.contains(filter)) {
-       card.hidden = this.checked ? false : true;
+        card.classList.toggle('hidden', !this.checked)
       }
-      
     }
   }
 }
