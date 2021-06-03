@@ -13,7 +13,7 @@ function createCard(game) {
     card.classList.add(tag)
   }
 
-  card.innerHTML = `<a href="./pages/game.html"><img src="${game.image}" class="card-img-top" alt="${game.title}"><p>${game.title}</p></a>`;
+  card.innerHTML = `<a href="./pages/game.html"><img src="${game.image}" class="card-img-top" alt="${game.title}"></a>`;
 
   gameList.appendChild(card); // adiciona o card a games-list
 }
