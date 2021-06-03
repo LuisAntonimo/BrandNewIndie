@@ -3,8 +3,8 @@ export default [
     'Adventure',
     'RPG',
     'Simulation',
-    'Cyberpunk',
-    'MMO',
-    'MOBA',
+    'Strategy',
+    'Tabletop',
+    'Roguelite',
     'Hack n slash'
 ]
