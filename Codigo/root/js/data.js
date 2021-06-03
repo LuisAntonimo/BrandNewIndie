@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Hades',
-    tags: ['Roguelite'],
+    tags: ['Roguelite', 'Action'],
     dev: 'Supergiant Games',
     image: 'https://placehold.jp/264x352.png',
   },
@@ -12,26 +12,26 @@ export default [
     image: 'https://placehold.jp/264x352.png',
   },
   {
-    title: '<Realpolitiks 2',
+    title: 'Realpolitiks 2',
     tags: ['Strategy'],
     dev: 'Jujubee',
     image: 'https://placehold.jp/264x352.png',
   },
   {
-    title: '<Hero Siege',
+    title: 'Hero Siege',
     tags: ['RPG'],
     dev: ['Panic Art Studios', 'Elias Viglione', 'Jussi Kukkonen'],
     image: 'https://placehold.jp/264x352.png',
   },
   {
-    title: '<Stardew Valley',
-    tags: ['Simulation'],
+    title: 'Stardew Valley',
+    tags: ['Simulation', 'RPG'],
     dev: ['Eric Barone', 'Sickhead Games', 'ConcernedApe'],
     image: 'https://placehold.jp/264x352.png',
   },
   {
     title: 'Paralives',
-    tags: ['Simulation'],
+    tags: ['Simulation', 'RPG'],
     dev: 'Alex Massé',
     image: 'https://placehold.jp/264x352.png',
   },
