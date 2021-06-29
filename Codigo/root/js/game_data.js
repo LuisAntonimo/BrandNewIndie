@@ -52,7 +52,7 @@ function searchGames() {
 	})
 }
 
-function generateID() { // Public Domain/MIT
+function generateID() {
 	var d = new Date().getTime();//Timestamp
 	var d2 = (performance && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
 	return 'yxxx'.replace(/[xy]/g, function(c) {
