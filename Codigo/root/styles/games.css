@@ -84,3 +84,27 @@ body {
   margin: 10px;
   background-color: var(--bs-gray-dark);
 }
+
+#erase-game {
+  float: right;
+}
+
+.cards .card img {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.card-inputs {
+  max-width: 90vh;
+  margin: 10px 0;
+}
+
+.tags button {
+  margin: 5px 3px;
+}
+
+@media only screen and (max-width:999px){
+  .cards .card img {
+    display: none;
+  }
+}

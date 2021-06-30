@@ -1,23 +1,27 @@
-export let game_db = {};
+import { getUpdatedGames, createCard } from "./game_crud.js";
+let game_db = {};
 
-const dadosIniciais = {
+const initialData = {
 	game_list: []
 }
+
+init();
 
 function init() {
 	const gameJSON = localStorage.getItem('game_db');
 
     if (!gameJSON) {   
-        game_db = dadosIniciais;
-        localStorage.setItem('game_db', JSON.stringify (dadosIniciais));
+        game_db = initialData;
+        localStorage.setItem('game_db', JSON.stringify (initialData));
     }
     else  {
-        game_db = JSON.parse(gameJSON);    
+        game_db = JSON.parse(gameJSON);
+				getUpdatedGames(game_db);
     }
 }
 
 
-const button = document.getElementById('btt');
+const button = document.getElementById('mainBttn');
 button.addEventListener('click', searchGames)
 
 const url = 'https://cors.bridged.cc/https://api.igdb.com/v4/games';
@@ -26,8 +30,7 @@ myHeaders.append('Client-ID', 'rnxg276wty5wu058cirpt702s7ry4c');
 myHeaders.append('Authorization','Bearer vpg2qovzjnzizgjwhl289fr9tchzla');
 
 
-export async function searchGames() {
-	init();
+function searchGames() {
 	const query = document.getElementById('search').value
 
 	const body = `fields name, cover, screenshots, videos, involved_companies; search "${query}"; where version_parent = null; limit 1;`
@@ -46,7 +49,7 @@ export async function searchGames() {
 									'videos': data[i].videos,
 							}
 					}
-					cadastrarGame(game);
+					addGame(game);
 			}
 	})
 }
@@ -68,7 +71,7 @@ function generateID() {
 }
 
 
-function cadastrarGame(gameData) {
+function addGame(gameData) {
 	const gameObject = {
 			'Id': `${generateID()}`,
 			'title': `${gameData.name}`,
@@ -86,4 +89,5 @@ function cadastrarGame(gameData) {
 	}
 	game_db.game_list.push(gameObject);
 	localStorage.setItem('game_db', JSON.stringify (game_db));
+	createCard(gameObject);
 }
