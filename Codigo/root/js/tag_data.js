@@ -3,5 +3,5 @@ export default {
 
     graphics: ['2d','3d','hand drawn', 'pixel art', 'ray casting', 'text based'],
 
-    age_rating: ['everyone', 'teen', 'mature', 'adult-only']
+    age_rate: ['everyone', 'teen', 'mature', 'adult-only']
 }

@@ -1,5 +1,7 @@
 import tagsData from './tag_data.js'
 
+const genreTags = tagsData.genre;
+
 const tags = document.querySelector('.tags')
 
 function createTags(data) { // cria uma tag baseado nos dados tirados do parâmetro
@@ -10,6 +12,12 @@ tag.innerHTML = `<input class="form-check-input" type="checkbox" value="" id="${
     tags.appendChild(tag)    
 }
 
-for (let i = 0; i < tagsData.length; i++) {
-    createTags(tagsData[i])
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+for (let i = 0; i < 8; i++) {
+    createTags(genreTags[getRandomInt(0, genreTags.length)])
 }

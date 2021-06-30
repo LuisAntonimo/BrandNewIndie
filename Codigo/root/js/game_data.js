@@ -1,4 +1,4 @@
-let game_db = {};
+export let game_db = {};
 
 const dadosIniciais = {
 	game_list: []
@@ -20,13 +20,13 @@ function init() {
 const button = document.getElementById('btt');
 button.addEventListener('click', searchGames)
 
-const url = 'https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/games';
+const url = 'https://cors.bridged.cc/https://api.igdb.com/v4/games';
 const myHeaders = new Headers();
 myHeaders.append('Client-ID', 'rnxg276wty5wu058cirpt702s7ry4c');
 myHeaders.append('Authorization','Bearer vpg2qovzjnzizgjwhl289fr9tchzla');
 
 
-function searchGames() {
+export async function searchGames() {
 	init();
 	const query = document.getElementById('search').value
 
@@ -44,8 +44,7 @@ function searchGames() {
 									'cover': data[i].cover,
 									'screenshots': data[i].screenshots,
 									'videos': data[i].videos,
-							},
-							'involved_companies': data[i].involved_companies
+							}
 					}
 					cadastrarGame(game);
 			}
@@ -73,8 +72,12 @@ function cadastrarGame(gameData) {
 	const gameObject = {
 			'Id': `${generateID()}`,
 			'title': `${gameData.name}`,
-			'tags': [],
-			'dev': gameData.involved_companies,
+			'tags': {
+				genre: [],
+				graphics: [],
+				age_rate: [],
+			},
+			'devs': [],
 			'media': {
 					'cover': gameData.media.cover,
 					'screenshots': gameData.media.screenshots,
