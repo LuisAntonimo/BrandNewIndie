@@ -5,8 +5,6 @@ const initialData = {
 	game_list: []
 }
 
-init();
-
 function init() {
 	const gameJSON = localStorage.getItem('game_db');
 
@@ -21,8 +19,8 @@ function init() {
 }
 
 
-const button = document.getElementById('mainBttn');
-button.addEventListener('click', searchGames)
+const searchBttn = document.getElementById('mainBttn');
+searchBttn.addEventListener('click', searchGames)
 
 const url = 'https://cors.bridged.cc/https://api.igdb.com/v4/games';
 const myHeaders = new Headers();
@@ -74,7 +72,7 @@ function generateID() {
 
 function addGame(gameData) {
 	const gameObject = {
-			'Id': `${generateID()}`,
+			'id': `${generateID()}`,
 			'title': `${gameData.name}`,
 			'tags': {
 				genre: [],
@@ -92,3 +90,21 @@ function addGame(gameData) {
 	localStorage.setItem('game_db', JSON.stringify (game_db));
 	createCard(gameObject);
 }
+
+export function removeGame(id) {
+	const gameJSON = localStorage.getItem('game_db');
+	game_db = JSON.parse(gameJSON);
+
+	const gameList = game_db.game_list;
+
+	for (let i = 0; i < gameList.length; i++) {
+		const game = gameList[i];
+		
+		if (game.id == id) {
+			gameList.splice(i, 1)
+			localStorage.setItem('game_db', JSON.stringify (game_db));
+		}
+	}
+}
+
+init();

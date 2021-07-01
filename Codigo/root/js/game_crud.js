@@ -1,3 +1,5 @@
+import {removeGame} from './game_data.js'
+
 export function getUpdatedGames(db) {
   const games = db.game_list;
 
@@ -8,18 +10,20 @@ export function getUpdatedGames(db) {
   }
 }
 
+const cardList = document.getElementById('gameCards');
+
 export async function createCard(game) {
-  const cardList = document.getElementById('gameCards');
   const card = document.createElement('div');
 
   const coverUrl = await getCover(game)
 
   card.className = 'card';
+  card.id = `${game.id}`
 
   card.innerHTML = `<div class="card-body">
     <div class="card-title">
       <h5>${game.title}</h5>
-      <button id="erase-game"class="btn btn-outline-danger"type="submit">Apagar</button>
+      <button class="btn btn-outline-danger erase-game"type="submit">Apagar</button>
     </div>
     <div class="row card-section">
     <div class="col-lg-2">
@@ -54,6 +58,7 @@ export async function createCard(game) {
 </div>`;
 
   cardList.appendChild(card);
+  setBttns(card);
 }
 
 const url = 'https://cors.bridged.cc/https://api.igdb.com/v4/covers';
@@ -80,4 +85,20 @@ async function getCover(game) {
   const imageUrl = `https://images.igdb.com/igdb/image/upload/t_cover_big/${await imageId}.jpg`;
 
   return imageUrl;
+}
+
+
+const deleteCard = function(id) {
+  const card = document.getElementById(id);
+
+  removeGame(id);
+  card.remove();
+}
+
+
+function setBttns(card) {
+  let id;
+  const deleteBttn = card.getElementsByClassName('erase-game')[0]
+
+  deleteBttn.addEventListener('click', deleteCard.bind(id, card.id ))
 }

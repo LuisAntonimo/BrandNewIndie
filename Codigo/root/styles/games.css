@@ -85,7 +85,7 @@ body {
   background-color: var(--bs-gray-dark);
 }
 
-#erase-game {
+.erase-game {
   float: right;
 }
 
