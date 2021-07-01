@@ -99,6 +99,10 @@ body {
   margin: 10px 0;
 }
 
+.card-inputs .form-control {
+  margin-right: 10px;
+}
+
 .tags button {
   margin: 5px 3px;
 }

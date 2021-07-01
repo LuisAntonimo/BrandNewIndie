@@ -61,6 +61,7 @@ const url = 'https://cors.bridged.cc/https://api.igdb.com/v4/covers';
 const myHeaders = new Headers();
   myHeaders.append('Client-ID', 'rnxg276wty5wu058cirpt702s7ry4c');
   myHeaders.append('Authorization','Bearer vpg2qovzjnzizgjwhl289fr9tchzla');
+  myHeaders.append('Access-Control-Allow-Origin', '*');
 
 async function getCover(game) {
 
