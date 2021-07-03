@@ -13,12 +13,29 @@ function createTags(data) {
   tags.appendChild(tag);
 }
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+const numData = getRandomTags();
+
+function getRandomTags() {
+  const nums = [],
+    ranNums = [];
+  for (let i = 0; i < genreTags.length; i++) {
+    nums.push(i);
+  }
+
+  let index = 8;
+
+  while (index > 0) {
+    let j = Math.floor(Math.random() * nums.length);
+
+    if (!ranNums.includes(j)) {
+      ranNums.push(nums[j]);
+      index--;
+    }
+  }
+
+  return ranNums;
 }
 
-for (let i = 0; i < 8; i++) {
-  createTags(genreTags[getRandomInt(0, genreTags.length)]);
+for (let i = 0; i < numData.length; i++) {
+  createTags(genreTags[numData[i]]);
 }
