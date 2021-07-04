@@ -12,12 +12,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./styles/login.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
 </head>
 
 <body>
     <div class="container logo">
-        <img src="./images/logo.svg" class="img-fluid" alt="BNI logo">
+        <img src="../images/logo.svg" class="img-fluid" alt="BNI logo">
         <h5>Bem vindo! Faça login ou crie sua conta abaixo:</h5>
     </div>
 
@@ -91,7 +91,7 @@
         </div>
     </div>
 
-    <script src="./js/login.js"></script>
+    <script src="../js/login.js"></script>
     <script>
         // Declara uma função para processar o formulário de login
         function processaFormLogin(event) {
@@ -105,7 +105,7 @@
             // Valida login e se estiver ok, redireciona para tela inicial da aplicação
             resultadoLogin = loginUser(username, password);
             if (resultadoLogin) {
-                window.location.href = 'pages/index.html';
+                window.location.href = 'index.html';
             } else {
                 // Se login falhou, avisa ao usuário
                 alert('Usuário ou senha incorretos');
