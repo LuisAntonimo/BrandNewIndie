@@ -1,13 +1,13 @@
 function aleatorio() {
-    links = new Array('./pages/gamecard1.html',
-    './pages/gamecard2.html',
-    './pages/gamecard3.html',
-    './pages/gamecard4.html',
-    './pages/gamecard5.html',
-    './pages/gamecard6.html',
-    './pages/gamecard7.html',
-    './pages/gamecard8.html',
-    './pages/gamecard9.html');
+    links = new Array('./gamecard1.html',
+    './gamecard2.html',
+    './gamecard3.html',
+    './gamecard4.html',
+    './gamecard5.html',
+    './gamecard6.html',
+    './gamecard7.html',
+    './gamecard8.html',
+    './gamecard9.html');
 
 tamanho = links.length;
 
