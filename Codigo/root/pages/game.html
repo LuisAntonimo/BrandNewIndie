@@ -1,270 +1,158 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <title>BNI</title>
-      <link rel="shortcut icon" href="../images/icon.ico" type="image/x-icon">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet"
-      />
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/styles2.css">
-        
-    </head>
-    <body>
-        <header class="container header">
-          <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="../index.html">
-                <img src="../images/logo.svg" width="100px" alt="BNI logo">
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" onclick="aleatorio()" href="#" id="JogoAleatorio">Jogo Aleatório</a>  
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pesquisa por Temas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Recomendações Semanais</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-danger" type="submit">Search</button>
-                </form>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../login.html">Login</a>
-                </li>
+  <title>BNI</title>
+  <link rel="shortcut icon" href="../images/icon.ico" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles/gamePage.css">
+
+</head>
+
+<body>
+  <header class="container header">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="../images/logo.svg" width="100px" alt="BNI logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" onclick="aleatorio()" href="#" id="JogoAleatorio">Jogo Aleatório</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pesquisa por Temas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Recomendações Semanais</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+          </form>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item d-flex">
+              <span class="material-icons user-icon">
+                account_circle
+              </span>
+              <a class="nav-link login-link" href="./user.html">Usuário</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="container game-info">
+      <div class="row info">
+        <div class="col-12 page-nav">
+          <ul class="nav bg-gray-dark">
+            <li class="nav-item">
+              <button type="button" class="btn btn-danger">Voltar</button>
+            </li>
+            <li class="nav-item">
+              <h3 id="game-name">Nome do Jogo</h3>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-5 col-12">
+          <div id="carouselExampleIndicators" class="carousel slide bg-dark" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://placehold.jp/569x266.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://placehold.jp/569x266.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://placehold.jp/569x266.png" class="d-block w-100" alt="...">
               </div>
             </div>
-          </nav>
-        </header>
-        <section class="Botão-voltar">
-            <div class="row">
-                <div class="col">
-                    <a type="button" class="btn btn-danger" href="../index.html">Voltar</a> 
-                </div>
-                <div class="col-md-auto">
-                  <p>Título do Jogo</p>
-                </div>
-              </div>
-        </section>
-        <section class="elementosjogo">
-            <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="../images/placeholder-jogos.png" class="d-block w-100" >
-                          </div>
-                          <div class="carousel-item">
-                            <img src="../images/placeholder-jogos.png" class="d-block w-100" >
-                          </div>
-                          <div class="carousel-item">
-                            <img src="../images/placeholder-jogos.png" class="d-block w-100" >
-                          </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="container">
-                        <div class="row">
-                          <div class="col"><img src="../images/placeholder-jogos.png" class="d-block" ></div>
-                          <div class="col"><p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio suscipit minima nobis a sapiente ea molestiae voluptate, deserunt quod quidem modi nisi veritatis necessitatibus consectetur numquam ipsam aliquid alias doloribus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsam dolorem iste quisquam a deserunt nemo ipsum molestiae recusandae distinctio. Harum eius</p></div>
-                        </div>
-                        <div class="row">
-                          <div class="col-8">
-                            <a class="dev-link" href="./developer.html">
-                              <img src="../images/place-holder-icone.png">
-                              <p>NOME DO DESENVOLVEDOR</p>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-            </div>  
-        </section>
-        <section class="tagss">
-            <h1>TAGS</h1>
-            <hr>
-            <div class="colunastags">
-                <div class="container">
-                    <div class="row">
-                      <div class="col">
-                        <div class="form-check">
-                                PLACEHOLDER TAG
-                            </label>
-                          </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-check">
-                                PLACEHOLDER TAG
-                            </label>
-                          </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-check">
-                                PLACEHOLDER TAG
-                            </label>
-                          </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-check">
-                              PLACEHOLDER TAG
-                            </label>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-            <hr>    
-        </section>
-        <section class="tagss">
-        <section class="comentarios">
-            <div class="container">
-                <div class="row align-items-start">
-                  <div class="col">
-                    <div class="analises">
-                        <div class="comentario">
-                            <div class="container">
-                                <div class="row">
-                                  <div class="col">
-                                    <img src="../images/place-holder-icone.png">
-                                  </div>
-                                  <div class="col-md-auto">
-                                    <p>Nome do Usuário</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia porro qui adipisci iure harum inventore<p>
-                                  </div>
-                                  <div class="col col-lg-2">
-                                    10/10
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-                        <div class="comentario">
-                            <div class="container">
-                                <div class="row">
-                                  <div class="col">
-                                    <img src="../images/place-holder-icone.png">
-                                  </div>
-                                  <div class="col-md-auto">
-                                    <p>Nome do Usuário</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia porro qui adipisci iure harum inventore<p>
-                                  </div>
-                                  <div class="col col-lg-2">
-                                    10/10
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-                        <div class="comentario">
-                            <div class="container">
-                                <div class="row">
-                                  <div class="col">
-                                    <img src="../images/place-holder-icone.png">
-                                  </div>
-                                  <div class="col-md-auto">
-                                    <p>Nome do Usuário</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia porro qui adipisci iure harum inventore<p>
-                                  </div>
-                                  <div class="col col-lg-2">
-                                    10/10
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-                        <div class="comentario">
-                            <div class="container">
-                                <div class="row">
-                                  <div class="col">
-                                    <img src="../images/place-holder-icone.png">
-                                  </div>
-                                  <div class="col-md-auto">
-                                    <p>Nome do Usuário</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia porro qui adipisci iure harum inventore<p>
-                                  </div>
-                                  <div class="col col-lg-2">
-                                    10/10
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col lojas">
-                    <div class="container">
-                        <div class="row">
-                          <div class="col">
-                            <h1>ONDE ENCONTRAR:</h1>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col lojas">
-                        <div class="container">
-                            <div class="row">
-                              <div class="col">
-                                <h1>STEAM</h1>
-                              </div>
-                              <div class="col">
-                                <a href="https://store.steampowered.com/?l=portuguese"><img src="../images/icone-steam.png"></a>
-                            </div>
-                        </div>   
-                    </div>
-                    <div class="col lojas">
-                        <div class="container">
-                            <div class="row">
-                              <div class="col">
-                                <h1>EPIC GAMES</h1>
-                              </div>
-                              <div class="col">
-                                <a href="https://www.epicgames.com/store/pt-BR/"><img src="../images/icone-epic-games.png"></a>
-                            </div>
-                        </div>   
-                    </div>
-                    <div class="col lojas">
-                        <div class="container">
-                            <div class="row">
-                              <div class="col">
-                                <h1>GOG</h1>
-                              </div>
-                              <div class="col">
-                                <a href="https://www.gog.com/games?page=1&sort=popularity"><img src="../images/gog-com.png"></a>
-                            </div>
-                        </div>   
-                    </div>
-                    
-                </div>
-        </section>
-        <footer>
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand">
-                <img src="../images/icon.svg" width="40px" alt="BNI logo">
-              </a>
-          </nav>
-        </footer>
-        
-        <script src="../js/random_redirect2.js"></script>
+          </div>    
+          </div>
 
-    </body>
+          <div class="col-lg-7 col-12">
+            <div class="card bg-dark">
+              <div id="game-info" class="d-flex">
+                <img src="https://placehold.jp/264x352.png" alt="" class="img-fluid">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque inventore suscipit obcaecati culpa reprehenderit dolorum? Unde nulla ipsa exercitationem error ab, iste impedit sed earum illum totam! Placeat, aperiam repellat.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </main>
+
+  <section class="results bg-dark">
+    <h1 id="tag-title">TAGS</h1>
+
+    <div class="d-flex bg-gray-dark">
+      
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-9 reviews">
+          <div class="card review-card">
+            <span class="material-icons user-icon">
+              account_circle
+            </span>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card bg-gray-dark stores">
+            <h5>Onde Encontrar</h5>
+            <ul class="store-list">
+              <li>
+                <p>Steam</p>
+              </li>
+              <li>
+                <p>Epic</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gray-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <img src="../images/icon.svg" width="40px" alt="BNI logo">
+        </a>
+    </nav>
+  </footer>
+
+  <script src="../js/random_redirect2.js"></script>
+
+</body>
+
 </html>

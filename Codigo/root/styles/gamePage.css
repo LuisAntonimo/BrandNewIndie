@@ -47,21 +47,15 @@
 }
 
 body {
-  background-color: var(--bs-dark);
+  background-color: var(--bs-gray-dark);
   color: var(--bs-light);
 }
-
-.logo {
-  margin: 20px auto;
-  text-align: center;
+header {
+  background-color: var(--bs-dark);
 }
 
-.logo h5 {
-  margin-top: 20px;
-}
-
-.text-info {
-  color: var(--bs-light) !important;
+main {
+    margin-bottom: 40px;
 }
 
 .login {
@@ -77,19 +71,50 @@ body {
   font-size: 1.5em;
 }
 
-.criar-conta {
-  margin-top: 50px;
-  width: 100%;
+
+.game-info {
+    margin-top: 120px;
 }
 
-.form-control {
-  border-color: var(--bs-dark);
+.page-nav {
+    margin-bottom: 20px;
 }
 
-.modal-content {
-  background-color: var(--bs-gray-dark);
+#game-name {
+    margin-left: 50px;
 }
 
-.modal-footer {
-  border-color: var(--bs-dark);
+.carousel {
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.carousel-item {
+    padding: 10px 10px 80px 10px;
+}
+
+#game-info {
+    padding: 10px;
+    text-align: justify;
+}
+
+#game-info img {
+    width: 20%;
+    margin-right: 15px;
+}
+
+.results {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.stores {
+    background-color: var(--bs-gray-dark);
+}
+
+.reviews {
+    background-color: var(--bs-gray-dark);
+}
+
+.review-card {
+    background-color: var(--bs-dark);
 }
