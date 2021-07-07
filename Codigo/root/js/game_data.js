@@ -1,8 +1,10 @@
 import { getUpdatedGames, createCard } from "./game_crud.js";
+import data2 from "./data2.js"
+
 let game_db = {};
 
 const initialData = {
-	game_list: []
+	game_list: data2
 }
 
 function init() {
@@ -11,6 +13,7 @@ function init() {
     if (!gameJSON) {   
         game_db = initialData;
         localStorage.setItem('game_db', JSON.stringify (initialData));
+				getUpdatedGames(game_db);
     }
     else  {
         game_db = JSON.parse(gameJSON);
@@ -32,7 +35,7 @@ myHeaders.append('Access-Control-Allow-Origin', '*');
 function searchGames() {
 	const query = document.getElementById('search').value
 
-	const body = `fields name, cover, screenshots, videos, involved_companies; search "${query}"; where version_parent = null; limit 1;`
+	const body = `fields name, cover, screenshots, videos; search "${query}"; where version_parent = null; limit 1;`
 
 	const myInit = { method: 'POST', body: body , headers: myHeaders};
 
@@ -84,6 +87,10 @@ function addGame(gameData) {
 					'cover': gameData.media.cover,
 					'screenshots': gameData.media.screenshots,
 					'videos': gameData.media.videos,
+			},
+			'stores' : {
+				steam: '',
+				epic: ''
 			}
 	}
 	game_db.game_list.push(gameObject);
