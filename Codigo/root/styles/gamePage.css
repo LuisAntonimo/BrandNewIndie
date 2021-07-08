@@ -194,6 +194,10 @@ main {
   }
 }
 
+.hidden {
+  display: none !important;
+}
+
 @media only screen and (max-width:280px) {
   #game-name {
     margin-left: 25px;

@@ -39,3 +39,4 @@ function getRandomTags() {
 for (let i = 0; i < numData.length; i++) {
   createTags(genreTags[numData[i]]);
 }
+

@@ -22,7 +22,7 @@ async function createCard(game) {
     card.classList.add(tag);
   }
 
-  card.innerHTML = `<a href="./index.html"><img src="${coverUrl}" class="card-img-top" alt="${game.title}"></a>`;
+  card.innerHTML = `<a href="./game.html?id=${game.id}"><img src="${coverUrl}" class="card-img-top" alt="${game.title}"></a>`;
 
   gameList.appendChild(card); // adiciona o card a games-list
 }
