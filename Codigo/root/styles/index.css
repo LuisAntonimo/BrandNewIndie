@@ -51,20 +51,47 @@ body {
   color: var(--bs-light);
 }
 
+/* Navbar */
 
-.inputs {
-  max-width: 90vh;
-  margin: 50px auto;
+.login {
+  margin: 0 30px 0 40px;
 }
 
-#search {
-  margin: 0 10px;
+.user-icon {
+  font-size: 50px;
+  margin-left: 50px;
 }
+
+.login-link {
+  font-size: 1.5em;
+}
+
+/* Jogos em destaque (carrossel) */
+
+.gameCarousel {
+  margin-top: 120px;
+}
+.carousel-inner {
+  margin: 40px 0;
+  padding-bottom: 80px;
+  background-color: var(--bs-dark);
+  border-radius: 10px;
+}
+
+.carousel-item {
+  padding: 50px;
+}
+
+.carousel-item a {
+  display: flex;
+  color: inherit;
+  text-decoration: none !important;
+}
+
+/* Sistema de tags */
 
 .searchTitle {
-  max-width: 120vh;
   margin: 0 auto;
-  margin-top: 100px;
   padding: 20px 0;
   text-align: center;
 }
@@ -75,40 +102,30 @@ body {
   font-weight: bold;
 }
 
-.games {
-  background-color: var(--bs-dark);
-  padding: 5px 0;
+.gamesFilter {
+  margin: 20px auto;
 }
 
-.cards .card {
-  margin: 10px;
-  background-color: var(--bs-gray-dark);
+#browse-games {
+  text-align: center;
+  margin: 40px;
 }
 
-.erase-game {
-  float: right;
+/* Cards do sistema de tags */
+
+#games-list .card-transparent {
+  margin: 10px 0 !important;
 }
 
-.cards .card img {
-  width: 100%;
-  margin-top: 10px;
+.hidden {
+  display: none;
 }
-
-.card-inputs {
-  max-width: 90vh;
-  margin: 10px 0;
-}
-
-.card-inputs .form-control {
-  margin-right: 10px;
-}
-
-.tags button {
-  margin: 5px 3px;
+.card-transparent img {
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
 }
 
 @media only screen and (max-width:999px){
-  .cards .card img {
+  .user-icon {
     display: none;
   }
 }

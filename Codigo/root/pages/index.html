@@ -7,20 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>BNI</title>
-  <link rel="shortcut icon" href="./images/icon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../images/icon.ico" type="image/x-icon">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="../styles/index.css">
 </head>
 
 <body>
+  <script type="module" src="../js/index.js"></script>
   <header class="container header">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.html">
-          <img src="./images/logo.svg" width="100px" alt="BNI logo">
+          <img src="../images/logo.svg" width="100px" alt="BNI logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,22 +30,27 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" onclick="aleatorio()" href="#" id="JogoAleatorio">Jogo Aleatório</a>
+              <a class="nav-link" href="" id="rand">Jogo Aleatório</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pesquisa por Temas</a>
+              <a class="nav-link disabled" href="#">Pesquisa por Temas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Recomendações Semanais</a>
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Recomendações Semanais</a>
             </li>
           </ul>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-danger" type="submit">Search</button>
+            <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" disabled>
+            <button class="btn btn-outline-danger disabled" type="submit">Search</button>
           </form>
-          <li class="nav-item login">
-            <a class="nav-link login-link" aria-current="page" href="login.html">Login</a>
-          </li>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item d-flex">
+              <span class="material-icons user-icon">
+                account_circle
+              </span>
+              <a class="nav-link login-link" href="./user.html">Usuário</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -65,12 +71,12 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <a class="row" href="./pages/gamecard1.html">
+              <a class="row" href="./game.html?id=3824">
                 <div class="col-sm-12 col-lg-6">
-                  <img src="https://placehold.jp/569x266.png" class="d-block w-100" alt="...">
+                  <img src="https://images.igdb.com/igdb/image/upload/t_original/sc8mal.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="col-sm-12 col-lg-6">
-                  <h2>Título do Jogo 1</h2>
+                  <h2>Phasmophobia</h2>
                   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, tenetur quam excepturi, quo
                     est laborum earum voluptatum optio nam ullam ratione unde nisi doloremque. Facilis maiores maxime
                     laboriosam quod nobis mollitia sed aspernatur blanditiis ratione harum? Voluptates tempora labore
@@ -79,12 +85,12 @@
               </a>
             </div>
             <div class="carousel-item">
-              <a class="row" href="./pages/gamecard2.html">
+              <a class="row" href="./game.html?id=2638">
                 <div class="col-sm-12 col-lg-6">
-                  <img src="https://placehold.jp/569x266.png" class="d-block w-100" alt="...">
+                  <img src="https://images.igdb.com/igdb/image/upload/t_original/sc6qqm.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="col-sm-12 col-lg-6">
-                  <h2>Título do Jogo 2</h2>
+                  <h2>Muse Dash</h2>
                   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, tenetur quam excepturi, quo
                     est laborum earum voluptatum optio nam ullam ratione unde nisi doloremque. Facilis maiores maxime
                     laboriosam quod nobis mollitia sed aspernatur blanditiis ratione harum? Voluptates tempora labore
@@ -93,12 +99,12 @@
               </a>
             </div>
             <div class="carousel-item">
-              <a class="row" href="./pages/gamecard3.html">
+              <a class="row" href="./game.html?id=9213">
                 <div class="col-sm-12 col-lg-6">
-                  <img src="https://placehold.jp/569x266.png" class="d-block w-100" alt="...">
+                  <img src="https://images.igdb.com/igdb/image/upload/t_original/sc9epb.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="col-sm-12 col-lg-6">
-                  <h2>Título do Jogo 3</h2>
+                  <h2>Warpips</h2>
                   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, tenetur quam excepturi, quo
                     est laborum earum voluptatum optio nam ullam ratione unde nisi doloremque. Facilis maiores maxime
                     laboriosam quod nobis mollitia sed aspernatur blanditiis ratione harum? Voluptates tempora labore
@@ -132,17 +138,18 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-gray-dark">
       <div class="container-fluid">
         <a class="navbar-brand">
-          <img src="./images/icon.svg" width="40px" alt="BNI logo">
+          <img src="../images/icon.svg" width="40px" alt="BNI logo">
         </a>
     </nav>
   </footer>
-  <script type="module" src="./js/cards.js"></script>
-  <script type="module" src="./js/tags.js"></script>
-  <script src="./js/card_filter.js"></script>
-  <script src="./js/random_redirect.js"></script>
+  <script type="module" src="../js/tags.js"></script>
+  <script type="module" src="../js/cards.js"></script>
+  <script src="../js/card_filter.js"></script>
+  <script src="../js/random_redirect.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
     crossorigin="anonymous"></script>
 </body>
+
 </html>

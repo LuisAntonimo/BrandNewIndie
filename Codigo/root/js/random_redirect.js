@@ -1,18 +1,18 @@
-function aleatorio() {
-    links = new Array('./pages/gamecard1.html',
-    './pages/gamecard2.html',
-    './pages/gamecard3.html',
-    './pages/gamecard4.html',
-    './pages/gamecard5.html',
-    './pages/gamecard6.html',
-    './pages/gamecard7.html',
-    './pages/gamecard8.html',
-    './pages/gamecard9.html');
+function init() {
+  let game_db = {};
+  const gameJSON = localStorage.getItem('game_db');
 
-tamanho = links.length;
+  game_db = JSON.parse(gameJSON);
 
-nRand = Math.floor((Math.random() * tamanho));
+  const gameList = game_db.game_list;
+  let links = gameList.map((response) => response.id);
 
-var JogoAleatorio = document.getElementById('JogoAleatorio');
-JogoAleatorio.href = `${links[nRand]}`;
+  const tamanho = links.length;
+
+  const nRand = Math.floor(Math.random() * tamanho);
+
+  const link = document.getElementById('rand');
+  link.href = `./game.html?id=${links[nRand]}`;
 }
+
+init();

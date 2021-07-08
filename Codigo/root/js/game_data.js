@@ -1,36 +1,41 @@
+import { getUpdatedGames, createCard } from "./game_crud.js";
+import data2 from "./data2.js"
+
 let game_db = {};
 
-const dadosIniciais = {
-	game_list: []
+const initialData = {
+	game_list: data2
 }
 
 function init() {
 	const gameJSON = localStorage.getItem('game_db');
 
     if (!gameJSON) {   
-        game_db = dadosIniciais;
-        localStorage.setItem('game_db', JSON.stringify (dadosIniciais));
+        game_db = initialData;
+        localStorage.setItem('game_db', JSON.stringify (initialData));
+				getUpdatedGames(game_db);
     }
     else  {
-        game_db = JSON.parse(gameJSON);    
+        game_db = JSON.parse(gameJSON);
+				getUpdatedGames(game_db);
     }
 }
 
 
-const button = document.getElementById('btt');
-button.addEventListener('click', searchGames)
+const searchBttn = document.getElementById('mainBttn');
+searchBttn.addEventListener('click', searchGames)
 
-const url = 'https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/games';
+const url = 'https://cors.bridged.cc/https://api.igdb.com/v4/games';
 const myHeaders = new Headers();
 myHeaders.append('Client-ID', 'rnxg276wty5wu058cirpt702s7ry4c');
 myHeaders.append('Authorization','Bearer vpg2qovzjnzizgjwhl289fr9tchzla');
+myHeaders.append('Access-Control-Allow-Origin', '*');
 
 
 function searchGames() {
-	init();
 	const query = document.getElementById('search').value
 
-	const body = `fields name, cover, screenshots, videos, involved_companies; search "${query}"; where version_parent = null; limit 1;`
+	const body = `fields name, cover, screenshots, videos; search "${query}"; where version_parent = null; limit 1;`
 
 	const myInit = { method: 'POST', body: body , headers: myHeaders};
 
@@ -44,18 +49,17 @@ function searchGames() {
 									'cover': data[i].cover,
 									'screenshots': data[i].screenshots,
 									'videos': data[i].videos,
-							},
-							'involved_companies': data[i].involved_companies
+							}
 					}
-					cadastrarGame(game);
+					addGame(game);
 			}
 	})
 }
 
-function generateUUID() { // Public Domain/MIT
+function generateID() {
 	var d = new Date().getTime();//Timestamp
 	var d2 = (performance && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
-	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+	return 'yxxx'.replace(/[xy]/g, function(c) {
 			var r = Math.random() * 16;//random number between 0 and 16
 			if(d > 0){//Use timestamp until depleted
 					r = (d + r)%16 | 0;
@@ -69,18 +73,45 @@ function generateUUID() { // Public Domain/MIT
 }
 
 
-function cadastrarGame(gameData) {
+function addGame(gameData) {
 	const gameObject = {
-			'Id': `${generateUUID()}`,
+			'id': `${generateID()}`,
 			'title': `${gameData.name}`,
-			'tags': [],
-			'dev': gameData.involved_companies,
+			'tags': {
+				genre: [],
+				graphics: [],
+				age_rate: [],
+			},
+			'devs': [],
 			'media': {
 					'cover': gameData.media.cover,
 					'screenshots': gameData.media.screenshots,
 					'videos': gameData.media.videos,
+			},
+			'stores' : {
+				steam: '',
+				epic: ''
 			}
 	}
 	game_db.game_list.push(gameObject);
 	localStorage.setItem('game_db', JSON.stringify (game_db));
+	createCard(gameObject);
 }
+
+export function removeGame(id) {
+	const gameJSON = localStorage.getItem('game_db');
+	game_db = JSON.parse(gameJSON);
+
+	const gameList = game_db.game_list;
+
+	for (let i = 0; i < gameList.length; i++) {
+		const game = gameList[i];
+		
+		if (game.id == id) {
+			gameList.splice(i, 1)
+			localStorage.setItem('game_db', JSON.stringify (game_db));
+		}
+	}
+}
+
+init();
