@@ -1,5 +1,7 @@
 # Brand New Indie
 
+![image](https://cdn.discordapp.com/attachments/762867339761942549/866161578147184650/unknown.png)
+
 The project aims to help the indie game public to find games from this segment with greater ease and with an audit behind, having recommendations approved by our team before being cataloged. Our goal also expands to have a closer contact with developers in this area, for a better evaluation and dissemination of their products.
 
 ## ADDENDUMS
